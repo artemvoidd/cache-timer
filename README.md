@@ -64,6 +64,10 @@ The countdown starts from the end of the last answer, so it can be a few seconds
 
 Установка — две команды выше. Русские подписи: `"language": "ru"` в настройках плагина (пример выше). Время жизни кэша: `/cache-ttl 5` или `/cache-ttl 60`.
 
+## Privacy
+
+Cache Timer collects and sends nothing. See [PRIVACY.md](PRIVACY.md).
+
 ## License
 
 MIT
