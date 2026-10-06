@@ -1,0 +1,4 @@
+# Written by Claude Code on every load; regenerated for each user's version
+.claude-plugin/types/
+tsconfig.json
+node_modules/

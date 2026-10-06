@@ -1,0 +1,12 @@
+{
+  "name": "artemvoidd",
+  "owner": { "name": "Artem Void", "url": "https://github.com/artemvoidd" },
+  "description": "Claude Code mods by Artem Void",
+  "plugins": [
+    {
+      "name": "cache-timer",
+      "source": "./",
+      "description": "Prompt cache countdown in the Claude Code footer"
+    }
+  ]
+}
