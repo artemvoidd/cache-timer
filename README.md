@@ -44,6 +44,16 @@ hooks: session.start, turn.start, turn.complete, classic.PostModelSwitch, comman
 calls: $.clock.every, $.clock.now, $.command.register, $.store.get, $.store.set, $.ui.invalidate, $.ui.resolve
 ```
 
+What each hook does:
+
+| Hook | What it does | Changes anything? |
+| --- | --- | --- |
+| `session.start` | Reads the saved TTL, registers `/cache-ttl`, starts a 5-second redraw timer | No |
+| `turn.start`, `turn.complete` | Notes the time of the main conversation's last request (subagent turns are ignored) | No, passes the event on unchanged |
+| `classic.PostModelSwitch` | Reads `cache_ttl` (5m or 1h) that Claude Code reports on a model switch | No, passes the event on unchanged |
+| `command.run` (`cache-ttl` only) | Answers `/cache-ttl 5` and `/cache-ttl 60` and saves the choice in the mod's own store | Only its own command; other commands are not touched |
+| `ui.render` (`SessionMode` only) | Adds the dot and the time in front of the footer's mode labels, which stay as they were | Only the footer labels |
+
 The countdown starts from the end of the last answer, so it can be a few seconds off from the exact API request.
 
 ---
